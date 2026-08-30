@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "id_usuario": 1,
+        "fecha": "2026-08-15",
+        "total": 16500,
+        "direccion": "Av. Sabattini 1234",
+        "productos": [1, 4],
+        "delivery": true
+    },
+    {
+        "id": 2,
+        "id_usuario": 2,
+        "fecha": "2026-08-16",
+        "total": 12000,
+        "direccion": "Calle San Martín 456",
+        "productos": [5, 8],
+        "delivery": true
+    },
+    {
+        "id": 3,
+        "id_usuario": 3,
+        "fecha": "2026-08-17",
+        "total": 11500,
+        "direccion": "",
+        "productos": [12, 8],
+        "delivery": false
+    },
+    {
+        "id": 4,
+        "id_usuario": 1,
+        "fecha": "2026-08-18",
+        "total": 23000,
+        "direccion": "Bv. Illia 321",
+        "productos": [2, 6, 8],
+        "delivery": true
+    }
+]
