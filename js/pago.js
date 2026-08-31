@@ -28,7 +28,7 @@ document.getElementById("form-pago").addEventListener("submit", async function (
     try {
 
         // cargar productos.json
-        const response = await fetch(basePath + "assets/productos.json");
+        const response = await fetch(basePath + "data/productos.json");
         const productos = await response.json();
 
         let productosTexto = "";
