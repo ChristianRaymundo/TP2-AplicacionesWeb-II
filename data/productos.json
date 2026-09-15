@@ -1,149 +1,149 @@
 [
-    {
-        "id": 1,
-        "categoria": "Empanadas",
-        "titulo": "Empanada Árabe",
-        "descripcion": "Carne, cebolla y tomate con especias, en masa fina y sabor casero.",
-        "precio": 9500,
-        "detallePrecio": "Precio por docena",
-        "imagen": "assets/imagenes/empanadas-arabes.png",
-        "disponible": true
-    },
-    {
-        "id": 2,
-        "categoria": "Empanadas",
-        "titulo": "Empanada Criolla",
-        "descripcion": "Clásica argentina con carne, cebolla, pimiento y huevo duro.",
-        "precio": 9500,
-        "detallePrecio": "Precio por docena",
-        "imagen": "assets/imagenes/empanadas-criollas.png",
-        "disponible": true
-    },
-    {
-        "id": 3,
-        "categoria": "Empanadas",
-        "titulo": "Empanada de Jamón y Queso",
-        "descripcion": "Jamón cocido y queso fundido, sabor suave y clásico.",
-        "precio": 9500,
-        "detallePrecio": "Precio por docena",
-        "imagen": "assets/imagenes/empanadas-jamonyqueso.png",
-        "disponible": true
-    },
-    {
-        "id": 4,
-        "categoria": "Pizzas",
-        "titulo": "Pizza Muzarella",
-        "descripcion": "Clásica pizza con salsa de tomate, abundante queso y orégano.",
-        "precio": 7000,
-        "imagen": "assets/imagenes/pizza-muzza.png",
-        "disponible": true
-    },
-    {
-        "id": 5,
-        "categoria": "Pizzas",
-        "titulo": "Pizza con Huevo",
-        "descripcion": "Base de muzzarella clásica con huevo rallado por encima, suave y sabrosa.",
-        "precio": 7500,
-        "imagen": "assets/imagenes/pizza-huevo.png",
-        "disponible": true
-    },
-    {
-        "id": 6,
-        "categoria": "Pizzas",
-        "titulo": "Pizza con Jamon",
-        "descripcion": "Pizza con salsa de tomate, mozzarella y abundante jamón.",
-        "precio": 9000,
-        "imagen": "assets/imagenes/pizza-jamon.png",
-        "disponible": true
-    },
-    {
-        "id": 7,
-        "categoria": "Pizzas",
-        "titulo": "Pizza con Jamon y huevo",
-        "descripcion": "Pizza con salsa de tomate, mozzarella y abundante huevo y jamon.",
-        "precio": 9500,
-        "imagen": "assets/imagenes/pizza-jamon-huevo.png",
-        "disponible": true
-    },
-    {
-        "id": 8,
-        "categoria": "Papas",
-        "titulo": "Porción de Papas",
-        "descripcion": "Papas fritas doradas y crujientes, recién hechas.",
-        "precio": 4500,
-        "imagen": "assets/imagenes/papas.png",
-        "disponible": true
-    },
-    {
-        "id": 9,
-        "categoria": "Papas",
-        "titulo": "Porción de Papas con Huevo",
-        "descripcion": "Papas fritas mezcladas con huevo revuelto, una combinación clásica y deliciosa.",
-        "precio": 6500,
-        "imagen": "assets/imagenes/papas-huevo.png",
-        "disponible": true
-    },
-    {
-        "id": 10,
-        "categoria": "Papas",
-        "titulo": "Porción de Papas con Albondiguitas",
-        "descripcion": "Papas fritas acompañadas de albondiguitas caseras, una combinación abundante y deliciosa.",
-        "precio": 6000,
-        "imagen": "assets/imagenes/papas-albondigas.png",
-        "disponible": true
-    },
-    {
-        "id": 11,
-        "categoria": "Papas",
-        "titulo": "Salchipapa",
-        "descripcion": "Porción de papas fritas con salchichas, sabor clásico y casero.",
-        "precio": 5500,
-        "imagen": "assets/imagenes/salchipapa.png",
-        "disponible": true
-    },
-    {
-        "id": 12,
-        "categoria": "Hamburguesas",
-        "titulo": "Hamburguesa Clasica",
-        "descripcion": "Simple con lechuga, tomate, huevo y porcion de papas.",
-        "precio": 7000,
-        "imagen": "assets/imagenes/hamburguesa-clasica.png",
-        "disponible": true
-    },
-    {
-        "id": 13,
-        "categoria": "Hamburguesas",
-        "titulo": "Hamburguesa Doble",
-        "descripcion": "Doble con lechuga, tomate, huevo y porcion de papas.",
-        "precio": 8000,
-        "imagen": "assets/imagenes/hamburguesa-doble.png",
-        "disponible": true
-    },
-    {
-        "id": 14,
-        "categoria": "Hamburguesas",
-        "titulo": "Hamburguesa Triple",
-        "descripcion": "Triple con lechuga, tomate, huevo y porcion de papas.",
-        "precio": 9000,
-        "imagen": "assets/imagenes/hamburguesa-triple.png",
-        "disponible": true
-    },
-    {
-        "id": 15,
-        "categoria": "Tortillas",
-        "titulo": "Tortilla de papa con Queso",
-        "descripcion": "Tortilla de papa con mucho queso fundido, ideal para compartir.",
-        "precio": 9000,
-        "imagen": "assets/imagenes/tortilla-queso.png",
-        "disponible": true
-    },
-    {
-        "id": 16,
-        "categoria": "Tortillas",
-        "titulo": "Tortilla de papa Rellena",
-        "descripcion": "Tortilla de papa rellena con jamón y queso, dorada y bien casera.",
-        "precio": 10000,
-        "imagen": "assets/imagenes/tortilla-rellena.png",
-        "disponible": true
-    }
+  {
+    "id": 1,
+    "categoria": "Empanadas",
+    "titulo": "Empanada Árabe",
+    "descripcion": "Carne, cebolla y tomate con especias, en masa fina y sabor casero.",
+    "precio": 9500,
+    "detallePrecio": "Precio por docena",
+    "imagen": "assets/imagenes/empanadas-arabes.png",
+    "disponible": true
+  },
+  {
+    "id": 2,
+    "categoria": "Empanadas",
+    "titulo": "Empanada Criolla",
+    "descripcion": "Clásica argentina con carne, cebolla, pimiento y huevo duro.",
+    "precio": 9500,
+    "detallePrecio": "Precio por docena",
+    "imagen": "assets/imagenes/empanadas-criollas.png",
+    "disponible": true
+  },
+  {
+    "id": 3,
+    "categoria": "Empanadas",
+    "titulo": "Empanada de Jamón y Queso",
+    "descripcion": "Jamón cocido y queso fundido, sabor suave y clásico.",
+    "precio": 9500,
+    "detallePrecio": "Precio por docena",
+    "imagen": "assets/imagenes/empanadas-jamonyqueso.png",
+    "disponible": true
+  },
+  {
+    "id": 4,
+    "categoria": "Pizzas",
+    "titulo": "Pizza Muzarella",
+    "descripcion": "Clásica pizza con salsa de tomate, abundante queso y orégano.",
+    "precio": 7000,
+    "imagen": "assets/imagenes/pizza-muzza.png",
+    "disponible": true
+  },
+  {
+    "id": 5,
+    "categoria": "Pizzas",
+    "titulo": "Pizza con Huevo",
+    "descripcion": "Base de muzzarella clásica con huevo rallado por encima, suave y sabrosa.",
+    "precio": 7500,
+    "imagen": "assets/imagenes/pizza-huevo.png",
+    "disponible": true
+  },
+  {
+    "id": 6,
+    "categoria": "Pizzas",
+    "titulo": "Pizza con Jamon",
+    "descripcion": "Pizza con salsa de tomate, mozzarella y abundante jamón.",
+    "precio": 9000,
+    "imagen": "assets/imagenes/pizza-jamon.png",
+    "disponible": true
+  },
+  {
+    "id": 7,
+    "categoria": "Pizzas",
+    "titulo": "Pizza con Jamon y huevo",
+    "descripcion": "Pizza con salsa de tomate, mozzarella y abundante huevo y jamon.",
+    "precio": 9500,
+    "imagen": "assets/imagenes/pizza-jamon-huevo.png",
+    "disponible": true
+  },
+  {
+    "id": 8,
+    "categoria": "Papas",
+    "titulo": "Porción de Papas",
+    "descripcion": "Papas fritas doradas y crujientes, recién hechas.",
+    "precio": 4500,
+    "imagen": "assets/imagenes/papas.png",
+    "disponible": true
+  },
+  {
+    "id": 9,
+    "categoria": "Papas",
+    "titulo": "Porción de Papas con Huevo",
+    "descripcion": "Papas fritas mezcladas con huevo revuelto, una combinación clásica y deliciosa.",
+    "precio": 6500,
+    "imagen": "assets/imagenes/papas-huevo.png",
+    "disponible": true
+  },
+  {
+    "id": 10,
+    "categoria": "Papas",
+    "titulo": "Porción de Papas con Albondiguitas",
+    "descripcion": "Papas fritas acompañadas de albondiguitas caseras, una combinación abundante y deliciosa.",
+    "precio": 6000,
+    "imagen": "assets/imagenes/papas-albondigas.png",
+    "disponible": true
+  },
+  {
+    "id": 11,
+    "categoria": "Papas",
+    "titulo": "Salchipapa",
+    "descripcion": "Porción de papas fritas con salchichas, sabor clásico y casero.",
+    "precio": 5500,
+    "imagen": "assets/imagenes/salchipapa.png",
+    "disponible": true
+  },
+  {
+    "id": 12,
+    "categoria": "Hamburguesas",
+    "titulo": "Hamburguesa Clasica",
+    "descripcion": "Simple con lechuga, tomate, huevo y porcion de papas.",
+    "precio": 7000,
+    "imagen": "assets/imagenes/hamburguesa-clasica.png",
+    "disponible": true
+  },
+  {
+    "id": 13,
+    "categoria": "Hamburguesas",
+    "titulo": "Hamburguesa Doble",
+    "descripcion": "Doble con lechuga, tomate, huevo y porcion de papas.",
+    "precio": 8000,
+    "imagen": "assets/imagenes/hamburguesa-doble.png",
+    "disponible": true
+  },
+  {
+    "id": 14,
+    "categoria": "Hamburguesas",
+    "titulo": "Hamburguesa Triple",
+    "descripcion": "Triple con lechuga, tomate, huevo y porcion de papas.",
+    "precio": 9000,
+    "imagen": "assets/imagenes/hamburguesa-triple.png",
+    "disponible": true
+  },
+  {
+    "id": 15,
+    "categoria": "Tortillas",
+    "titulo": "Tortilla de papa con Queso",
+    "descripcion": "Tortilla de papa con mucho queso fundido, ideal para compartir.",
+    "precio": 9000,
+    "imagen": "assets/imagenes/tortilla-queso.png",
+    "disponible": true
+  },
+  {
+    "id": 16,
+    "categoria": "Tortillas",
+    "titulo": "Tortilla de papa Rellena",
+    "descripcion": "Tortilla de papa rellena con jamón y queso, dorada y bien casera.",
+    "precio": 10000,
+    "imagen": "assets/imagenes/tortilla-rellena.png",
+    "disponible": true
+  }
 ]

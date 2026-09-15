@@ -1,51 +1,51 @@
 [
-    {
-        "id": 1,
-        "id_usuario": 1,
-        "fecha": "2026-08-15",
-        "direccion": "Av. Sabattini 1234",
-        "delivery": true,
-        "productos": [
-            { "id_producto": 1, "cantidad": 1, "subtotal": 9500 },
-            { "id_producto": 4, "cantidad": 1, "subtotal": 7000 }
-        ],
-        "total": 16500
-    },
-    {
-        "id": 2,
-        "id_usuario": 2,
-        "fecha": "2026-08-16",
-        "direccion": "Calle San Martín 456",
-        "delivery": true,
-        "productos": [
-            { "id_producto": 5, "cantidad": 1, "subtotal": 7500 },
-            { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
-        ],
-        "total": 12000
-    },
-    {
-        "id": 3,
-        "id_usuario": 3,
-        "fecha": "2026-08-17",
-        "direccion": "",
-        "delivery": false,
-        "productos": [
-            { "id_producto": 12, "cantidad": 1, "subtotal": 7000 },
-            { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
-        ],
-        "total": 11500
-    },
-    {
-        "id": 4,
-        "id_usuario": 1,
-        "fecha": "2026-08-18",
-        "direccion": "Bv. Illia 321",
-        "delivery": true,
-        "productos": [
-            { "id_producto": 2, "cantidad": 1, "subtotal": 9500 },
-            { "id_producto": 6, "cantidad": 1, "subtotal": 9000 },
-            { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
-        ],
-        "total": 23000
-    }
+  {
+    "id": 1,
+    "id_usuario": 1,
+    "fecha": "2026-08-15",
+    "direccion": "Av. Sabattini 1234",
+    "delivery": true,
+    "productos": [
+        { "id_producto": 1, "cantidad": 1, "subtotal": 9500 },
+        { "id_producto": 4, "cantidad": 1, "subtotal": 7000 }
+    ],
+    "total": 16500
+  },
+  {
+    "id": 2,
+    "id_usuario": 2,
+    "fecha": "2026-08-16",
+    "direccion": "Calle San Martín 456",
+    "delivery": true,
+    "productos": [
+        { "id_producto": 5, "cantidad": 1, "subtotal": 7500 },
+        { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
+    ],
+    "total": 12000
+  },
+  {
+    "id": 3,
+    "id_usuario": 3,
+    "fecha": "2026-08-17",
+    "direccion": "",
+    "delivery": false,
+    "productos": [
+        { "id_producto": 12, "cantidad": 1, "subtotal": 7000 },
+        { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
+    ],
+    "total": 11500
+  },
+  {
+    "id": 4,
+    "id_usuario": 1,
+    "fecha": "2026-08-18",
+    "direccion": "Bv. Illia 321",
+    "delivery": true,
+    "productos": [
+        { "id_producto": 2, "cantidad": 1, "subtotal": 9500 },
+        { "id_producto": 6, "cantidad": 1, "subtotal": 9000 },
+        { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
+    ],
+    "total": 23000
+  }
 ]

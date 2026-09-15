@@ -1,34 +1,34 @@
 [
-    {
-        "id": 1,
-        "nombre": "Juan",
-        "apellido": "Pérez",
-        "email": "juan.perez@email.com",
-        "contraseña": "123456",
-        "activo": true
-    },
-    {
-        "id": 2,
-        "nombre": "María",
-        "apellido": "Gómez",
-        "email": "maria.gomez@email.com",
-        "contraseña": "maria123",
-        "activo": true
-    },
-    {
-        "id": 3,
-        "nombre": "Lucas",
-        "apellido": "Rodríguez",
-        "email": "lucas.rodriguez@email.com",
-        "contraseña": "lucas456",
-        "activo": true
-    },
-    {
-        "id": 4,
-        "nombre": "Sofía",
-        "apellido": "Martínez",
-        "email": "sofia.martinez@email.com",
-        "contraseña": "sofia789",
-        "activo": false
-    }
+  {
+    "id": 1,
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "email": "juan.perez@email.com",
+    "contraseña": "123456",
+    "activo": true
+  },
+  {
+    "id": 2,
+    "nombre": "María",
+    "apellido": "Gómez",
+    "email": "maria.gomez@email.com",
+    "contraseña": "maria123",
+    "activo": true
+  },
+  {
+    "id": 3,
+    "nombre": "Lucas",
+    "apellido": "Rodríguez",
+    "email": "lucas.rodriguez@email.com",
+    "contraseña": "lucas456",
+    "activo": true
+  },
+  {
+    "id": 4,
+    "nombre": "Sofía",
+    "apellido": "Martínez",
+    "email": "sofia.martinez@email.com",
+    "contraseña": "sofia789",
+    "activo": false
+  }
 ]
