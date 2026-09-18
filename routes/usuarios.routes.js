@@ -1,6 +1,5 @@
 import { Router } from 'express'
-import { get_usuarios, get_usuario_byId, get_usuario_byEmail, eliminar_usuario } from '../utils/usuarios.js'
-import { eliminar_ventas_byUsuario } from '../utils/ventas.js'
+import { get_usuarios, get_usuario_byId, get_usuario_byEmail, actualizar_usuario } from '../utils/usuarios.js'
 
 const router = Router()
 
@@ -52,14 +51,12 @@ router.delete('/:id', async (req, res) => {
         })
     }
 
-    // integridad: primero eliminamos las ventas asociadas a este usuario
-    await eliminar_ventas_byUsuario(id)
-
-    // recién ahora eliminamos el usuario
-    await eliminar_usuario(id)
+    // no borramos el usuario de verdad: lo marcamos como inactivo
+    // asi las ventas que ya tiene siguen siendo validas
+    await actualizar_usuario(id, { activo: false })
 
     res.status(200).json({
-        mensaje: `Usuario ${id} y sus ventas asociadas fueron eliminados`
+        mensaje: `Usuario ${id} fue desactivado`
     })
 })
 

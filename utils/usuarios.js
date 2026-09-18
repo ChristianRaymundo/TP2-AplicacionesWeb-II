@@ -8,8 +8,18 @@ export const get_usuario_byId = (id) => {
 }
 
 export const get_usuarios = () => {
-    // se excluye la contraseña por seguridad, no se muestra en la respuesta
-    return usuariosData.map(({ contraseña, ...resto }) => resto)
+    // armamos una lista nueva sin el campo contraseña, por seguridad
+    const usuariosSinPassword = usuariosData.map((usuario) => {
+        return {
+            id: usuario.id,
+            nombre: usuario.nombre,
+            apellido: usuario.apellido,
+            email: usuario.email,
+            activo: usuario.activo
+        }
+    })
+
+    return usuariosSinPassword
 }
 
 export const get_usuario_byEmail = (email) => {
@@ -34,21 +44,4 @@ export const actualizar_usuario = async (id, cambios) => {
     )
 
     return usuariosData[index]
-}
-
-export const eliminar_usuario = async (id) => {
-    const index = usuariosData.findIndex(u => u.id === id)
-
-    if (index === -1) {
-        return false
-    }
-
-    usuariosData.splice(index, 1)
-
-    await writeFile(
-        './data/usuarios.json',
-        JSON.stringify(usuariosData, null, 2)
-    )
-
-    return true
 }

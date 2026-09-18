@@ -25,12 +25,3 @@ export const agregar_venta = async (nuevaVenta) => {
 
     return nuevaVenta
 }
-
-export const eliminar_ventas_byUsuario = async (id_usuario) => {
-    ventasData = ventasData.filter(v => v.id_usuario !== id_usuario)
-
-    await writeFile(
-        './data/ventas.json',
-        JSON.stringify(ventasData, null, 2)
-    )
-}

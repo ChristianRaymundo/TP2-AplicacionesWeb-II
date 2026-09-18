@@ -13,7 +13,7 @@
     "apellido": "Gómez",
     "email": "maria.gomez@email.com",
     "contraseña": "maria123",
-    "activo": true
+    "activo": false
   },
   {
     "id": 3,
