@@ -5,21 +5,21 @@ Para probarlo escribir "node index.js" y el servidor queda andando en el puerto 
 El proyecto está organizado en carpetas: `routes/` tiene las rutas de cada sección (usuarios, productos, ventas), y `utils/` tiene las funciones que se encargan de leer y guardar los datos en los archivos JSON de `data/`.
 
 ## Usuarios (/usuarios)
-- GET /usuarios → devuelve la lista completa de usuarios (sin mostrar la contraseña).
-- GET /usuarios/:id → devuelve un usuario puntual según su id.
-- POST /usuarios/login → recibe email y contraseña en el body, y devuelve un mensaje de bienvenida si coinciden con algún usuario registrado.
-- DELETE /usuarios/:id → no elimina al usuario físicamente, lo marca como inactivo (activo: false). Se hace así para no romper la relación con las ventas que ya tenga hechas ese usuario.
+- GET /usuarios -> devuelve la lista completa de usuarios (sin mostrar la contraseña).
+- GET /usuarios/:id -> devuelve un usuario puntual según su id.
+- POST /usuarios/login -> recibe email y contraseña en el body, y devuelve un mensaje de bienvenida si coinciden con algún usuario registrado.
+- DELETE /usuarios/:id -> no elimina al usuario físicamente, lo marca como inactivo (activo: false). Se hace así para no romper la relación con las ventas que ya tenga hechas ese usuario.
 
 ## Productos (/productos)
 - GET /productos → devuelve todos los productos disponibles.
-- GET /productos/:id → devuelve un producto puntual.
-- PUT /productos/:id → permite actualizar datos de un producto (por ejemplo, el precio), mandando en el body solo los campos que se quieren cambiar.
+- GET /productos/:id -> devuelve un producto puntual.
+- PUT /productos/:id -> permite actualizar datos de un producto (por ejemplo, el precio), mandando en el body solo los campos que se quieren cambiar.
 - DELETE /productos/:id -> elimina un producto.
 
 ## Ventas (/ventas)
-- GET /ventas → devuelve todas las ventas registradas.
+- GET /ventas -> devuelve todas las ventas registradas.
 - GET /ventas/:id -> devuelve una venta puntual.
-- POST /ventas → crea una venta nueva, mandando en el body los datos completos (usuario, productos, dirección, total, etc.).
+- POST /ventas -> crea una venta nueva, mandando en el body los datos completos (usuario, productos, dirección, total, etc.).
 
 ## Ejemplo de body para probar el login
 En Postman: método POST, pestaña body -> raw -> JSON y pegar:
