@@ -24,34 +24,42 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', async (req, res) => {
-    const id = Number(req.params.id)
-    const cambios = req.body
+    try {
+        const id = Number(req.params.id)
+        const cambios = req.body
 
-    const producto = await actualizar_producto(id, cambios)
+        const producto = await actualizar_producto(id, cambios)
 
-    if (!producto) {
-        return res.status(404).json({
-            mensaje: 'Producto no encontrado'
-        })
+        if (!producto) {
+            return res.status(404).json({
+                mensaje: 'Producto no encontrado'
+            })
+        }
+
+        res.status(200).json(producto)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al actualizar el producto.' })
     }
-
-    res.status(200).json(producto)
 })
 
 router.delete('/:id', async (req, res) => {
-    const id = Number(req.params.id)
+    try {
+        const id = Number(req.params.id)
 
-    const eliminado = await eliminar_producto(id)
+        const eliminado = await eliminar_producto(id)
 
-    if (!eliminado) {
-        return res.status(404).json({
-            mensaje: 'Producto no encontrado'
+        if (!eliminado) {
+            return res.status(404).json({
+                mensaje: 'Producto no encontrado'
+            })
+        }
+
+        res.status(200).json({
+            mensaje: `Producto ${id} eliminado`
         })
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al eliminar el producto.' })
     }
-
-    res.status(200).json({
-        mensaje: `Producto ${id} eliminado`
-    })
 })
 
 export default router

@@ -24,11 +24,15 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const nuevaVenta = req.body
+    try {
+        const nuevaVenta = req.body
 
-    const venta = await agregar_venta(nuevaVenta)
+        const venta = await agregar_venta(nuevaVenta)
 
-    res.status(201).json(venta)
+        res.status(201).json(venta)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al guardar la venta.' })
+    }
 })
 
 export default router
