@@ -1,6 +1,6 @@
 # Rotisería Web
 
-Para probarlo escribir "node index.jsy" el servidor queda andando en el puerto 3000.
+Para probarlo escribir "node index.js" y el servidor queda andando en el puerto 3000.
 
 El proyecto está organizado en carpetas: `routes/` tiene las rutas de cada sección (usuarios, productos, ventas), y `utils/` tiene las funciones que se encargan de leer y guardar los datos en los archivos JSON de `data/`.
 
