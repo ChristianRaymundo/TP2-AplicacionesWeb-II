@@ -12,6 +12,10 @@ app.use(express.json())
 
 const port = process.env.PORT || 3000
 
+// sirve el front desde la carpeta public
+app.use(express.static('./public'))
+
+// rutas de la API
 app.use('/usuarios', usuariosRouter)
 app.use('/productos', productosRouter)
 app.use('/ventas', ventasRouter)

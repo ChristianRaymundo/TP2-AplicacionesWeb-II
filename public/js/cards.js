@@ -8,7 +8,7 @@ let productos = [];
 /* ================================
           cargar JSON con FETCH
 ================================ */
-fetch(basePath + "data/productos.json")
+fetch("/productos")
     .then(res => {
         if (!res.ok) throw new Error("No se pudo cargar productos.json (status " + res.status + ")");
         return res.json();
