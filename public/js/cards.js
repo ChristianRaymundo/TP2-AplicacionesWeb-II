@@ -14,7 +14,7 @@ fetch("/productos")
         return res.json();
     })
     .then(data => {
-        productos = data;
+        productos = data.filter(p => p.disponible);
         iniciarCards();
     })
     .catch(error => console.error("Error al cargar productos:", error));
@@ -92,12 +92,32 @@ function iniciarCards() {
     else if (url.includes("categoria3.html")) generarCards("Papas");
     else if (url.includes("categoria4.html")) generarCards("Hamburguesas");
     else if (url.includes("categoria5.html")) generarCards("Tortillas");
+    else if (url.includes("productos.html")) iniciarFiltros();
     else if (!dentroDePages) {
         // productos destacados en la home
         generarCards("Pizzas", document.getElementById("pizzas-destacadas"), 3);
         generarCards("Empanadas", document.getElementById("empanadas-destacadas"), 3);
         generarCards("Papas", document.getElementById("papas-destacadas"), 3);
     }
+}
+
+        // filtros de la pagina de productos
+function iniciarFiltros() {
+    const botones = document.querySelectorAll(".filtros button");
+
+    // al principio muestro todos los productos
+    generarCards();
+
+    botones.forEach(boton => {
+        boton.addEventListener("click", function() {
+            // saco la clase activo de todos y se la pongo al que se apretó
+            botones.forEach(b => b.classList.remove("activo"));
+            boton.classList.add("activo");
+
+            // si la categoria viene vacia (Todos) se muestran todos
+            generarCards(boton.dataset.categoria);
+        });
+    });
 }
 
 /* ======================================================
