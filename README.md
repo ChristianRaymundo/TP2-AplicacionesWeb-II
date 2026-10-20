@@ -12,6 +12,7 @@ Se incorporó una nueva página Productos, accesible desde el navbar, donde se m
 Acceso local: http://localhost:3000/pages/productos.html
 
 Para acceder, el servidor debe estar iniciado.
+
 2. Carrito de compras
 - Permite agregar productos y seleccionar cantidades.
 - Conserva los productos seleccionados mediante localStorage.
