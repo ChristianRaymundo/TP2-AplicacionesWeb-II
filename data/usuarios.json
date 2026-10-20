@@ -30,5 +30,21 @@
     "email": "sofia.martinez@email.com",
     "contraseña": "sofia789",
     "activo": false
+  },
+  {
+    "id": 5,
+    "nombre": "Carlos",
+    "apellido": "Prueba",
+    "email": "carlos.prueba2026@email.com",
+    "contraseña": "Prueba123",
+    "activo": true
+  },
+  {
+    "id": 6,
+    "nombre": "Christian",
+    "apellido": "Raymundo",
+    "email": "Im.crisz@hotmail.com",
+    "contraseña": "123456",
+    "activo": true
   }
 ]

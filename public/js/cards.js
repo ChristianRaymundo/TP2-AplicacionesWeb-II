@@ -125,6 +125,22 @@ function iniciarFiltros() {
 ====================================================== */
 function agregarAlCarrito(productoId, cantidad, boton) {
 
+    // Verificar si el usuario inició sesión
+    const usuario = sessionStorage.getItem("usuario")
+
+    if (!usuario) {
+        // Guardar el producto que intentó agregar
+        sessionStorage.setItem("productoPendiente", JSON.stringify({
+            id: productoId,
+            cantidad: parseInt(cantidad),
+            extraJQ: boton.closest(".card").querySelector(".extra-jq")?.checked || false
+        }))
+
+        alert("Para agregar productos al carrito, primero debes iniciar sesión.")
+        window.location.href = `${basePath}login.html`
+        return
+    }
+    
     // obtener carrito actual o crearlo vacío
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 

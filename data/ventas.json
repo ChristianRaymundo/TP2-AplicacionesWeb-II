@@ -6,8 +6,16 @@
     "direccion": "Av. Sabattini 1234",
     "delivery": true,
     "productos": [
-        { "id_producto": 1, "cantidad": 1, "subtotal": 9500 },
-        { "id_producto": 4, "cantidad": 1, "subtotal": 7000 }
+      {
+        "id_producto": 1,
+        "cantidad": 1,
+        "subtotal": 9500
+      },
+      {
+        "id_producto": 4,
+        "cantidad": 1,
+        "subtotal": 7000
+      }
     ],
     "total": 16500
   },
@@ -18,8 +26,16 @@
     "direccion": "Calle San Martín 456",
     "delivery": true,
     "productos": [
-        { "id_producto": 5, "cantidad": 1, "subtotal": 7500 },
-        { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
+      {
+        "id_producto": 5,
+        "cantidad": 1,
+        "subtotal": 7500
+      },
+      {
+        "id_producto": 8,
+        "cantidad": 1,
+        "subtotal": 4500
+      }
     ],
     "total": 12000
   },
@@ -30,8 +46,16 @@
     "direccion": "",
     "delivery": false,
     "productos": [
-        { "id_producto": 12, "cantidad": 1, "subtotal": 7000 },
-        { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
+      {
+        "id_producto": 12,
+        "cantidad": 1,
+        "subtotal": 7000
+      },
+      {
+        "id_producto": 8,
+        "cantidad": 1,
+        "subtotal": 4500
+      }
     ],
     "total": 11500
   },
@@ -42,10 +66,81 @@
     "direccion": "Bv. Illia 321",
     "delivery": true,
     "productos": [
-        { "id_producto": 2, "cantidad": 1, "subtotal": 9500 },
-        { "id_producto": 6, "cantidad": 1, "subtotal": 9000 },
-        { "id_producto": 8, "cantidad": 1, "subtotal": 4500 }
+      {
+        "id_producto": 2,
+        "cantidad": 1,
+        "subtotal": 9500
+      },
+      {
+        "id_producto": 6,
+        "cantidad": 1,
+        "subtotal": 9000
+      },
+      {
+        "id_producto": 8,
+        "cantidad": 1,
+        "subtotal": 4500
+      }
     ],
     "total": 23000
+  },
+  {
+    "id": 5,
+    "id_usuario": 6,
+    "fecha": "2026-10-15",
+    "telefono": "3512793199",
+    "direccion": "",
+    "delivery": false,
+    "formaPago": "Efectivo",
+    "observaciones": "",
+    "productos": [
+      {
+        "id_producto": 5,
+        "cantidad": 1,
+        "subtotal": 7500
+      }
+    ],
+    "total": 7500
+  },
+  {
+    "id": 6,
+    "id_usuario": 6,
+    "fecha": "2026-10-19",
+    "telefono": "3512793199",
+    "direccion": "prueba",
+    "delivery": true,
+    "formaPago": "Transferencia",
+    "observaciones": "",
+    "productos": [
+      {
+        "id_producto": 5,
+        "cantidad": 1,
+        "subtotal": 7500
+      },
+      {
+        "id_producto": 3,
+        "cantidad": 6,
+        "subtotal": 5000
+      }
+    ],
+    "total": 13000
+  },
+  {
+    "id": 7,
+    "id_usuario": 6,
+    "fecha": "2026-10-19",
+    "telefono": "3512793199",
+    "direccion": "",
+    "delivery": false,
+    "formaPago": "Transferencia",
+    "observaciones": "prueba",
+    "productos": [
+      {
+        "id_producto": 5,
+        "cantidad": 1,
+        "subtotal": 7500
+      }
+    ],
+    "total": 7500
   }
 ]
