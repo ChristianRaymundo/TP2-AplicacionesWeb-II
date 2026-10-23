@@ -35,6 +35,8 @@ Las consultas de productos leen los datos actualizados desde el archivo JSON, ev
 
 Se utilizan HTML, CSS, JavaScript, Node.js y Express. La comunicación entre frontend y backend se realiza mediante fetch y solicitudes HTTP. Los datos se almacenan en archivos JSON, mientras que localStorage y sessionStorage permiten conservar información en el navegador.
 
+Habilite CORS para permitir pedidos desde cualquier origen.
+
 El proyecto utiliza una estructura de monorepo:
 - public/: contiene las páginas HTML, los archivos JavaScript, los estilos y los recursos del frontend
 - routes/: rutas del backend para usuarios, productos y ventas

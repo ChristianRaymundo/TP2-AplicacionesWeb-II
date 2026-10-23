@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import cors from 'cors'
 import usuariosRouter from './routes/usuarios.routes.js'
 import productosRouter from './routes/productos.routes.js'
 import ventasRouter from './routes/ventas.routes.js'
@@ -7,6 +8,9 @@ import ventasRouter from './routes/ventas.routes.js'
 dotenv.config()
 
 const app = express()
+
+// habilita CORS para cualquier origen (*)
+app.use(cors({ origin: '*' }))
 
 app.use(express.json())
 
