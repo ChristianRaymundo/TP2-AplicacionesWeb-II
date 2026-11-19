@@ -34,9 +34,12 @@ mongodb://127.0.0.1:27017/rotiseria
 1. Instalar dependencias: npm install
 
 2. Crear el archivo .env en la raíz del proyecto y configurar las siguientes variables:
+
+    ```env
     PORT=3000
     JWT_SECRET=una_clave_secreta
     MONGO_URI=mongodb://127.0.0.1:27017/rotiseria
+    ```
 
 3. Preparar las contraseñas de los datos iniciales, si se encuentran en texto plano: node scripts/migrar-passwords.js
 Si las contraseñas ya tienen su hash, no las procesa nuevamente.
@@ -90,10 +93,12 @@ Realizar un POST a /usuarios/login, enviando el correo electrónico y la contras
 
 Ejemplo de body:
 
+```json
 {
     "email": "lucas.rodriguez@email.com",
     "contraseña": "lucas456"
 }
+```
 
 Realizar un POST a /ventas sin enviar el token. El servidor debe responder con el código 401, indicando que no se proporcionó un token.
 
@@ -101,6 +106,7 @@ Repetir la solicitud incluyendo el token en Authorization → Bearer Token y env
 
 Ejemplo de body:
 
+```json
 {
     "telefono": "3511234567",
     "direccion": "Av. Ejemplo 123",
@@ -112,6 +118,7 @@ Ejemplo de body:
         { "id_producto": 12, "cantidad": 1, "extraJQ": true }
     ]
 }
+```
 
 También se verificó el rechazo de credenciales incorrectas durante el inicio de sesión.
 
