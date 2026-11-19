@@ -24,7 +24,10 @@ router.post('/', async (req, res) => {
     try {
         const producto = await agregar_producto(req.body)
 
-        res.status(201).json(producto)
+        res.status(201).json({
+            mensaje: 'Producto agregado correctamente',
+            producto: producto
+        })
     } catch (error) {
         res.status(500).json({ mensaje: 'Error al crear el producto.' })
     }
