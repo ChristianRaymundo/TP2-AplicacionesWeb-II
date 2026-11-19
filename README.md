@@ -42,15 +42,18 @@ mongodb://127.0.0.1:27017/rotiseria
     ```
 
 3. Preparar las contraseñas de los datos iniciales, si se encuentran en texto plano: node scripts/migrar-passwords.js
-Si las contraseñas ya tienen su hash, no las procesa nuevamente.
-En los datos iniciales del proyecto las contraseñas ya están hasheadas, por lo que este paso no es necesario normalmente. Se utiliza, por ejemplo, si se agrega manualmente un usuario al archivo JSON con una contraseña en texto plano.
+
+    Si las contraseñas ya tienen su hash, no las procesa nuevamente.
+    En los datos iniciales del proyecto las contraseñas ya están hasheadas, por lo que este paso no es necesario normalmente. Se utiliza, por ejemplo, si se agrega manualmente un usuario al archivo JSON con una contraseña en texto plano.
 
 4. Cargar los datos iniciales en MongoDB: node scripts/seed.js
+
     Este script vacía las colecciones y las carga de nuevo con los archivos JSON de `data/`, por lo que sirve para dejar la base como al principio.
 
 5. Iniciar el servidor: node index.js
 
 6. Abrir la aplicación en el navegador: http://localhost:3000
+
     Si el puerto 3000 está ocupado por otro proyecto, cambiar `PORT` en el `.env` y abrir la aplicación en ese puerto.
 
 ## Rutas
