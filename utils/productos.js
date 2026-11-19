@@ -21,7 +21,7 @@ export const actualizar_producto = async (id, cambios) => {
     return await Producto.findOneAndUpdate(
         { id: id },
         cambios,
-        { new: true, runValidators: true }
+        { returnDocument: 'after', runValidators: true }
     )
 }
 
