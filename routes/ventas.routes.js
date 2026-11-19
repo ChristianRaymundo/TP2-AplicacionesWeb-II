@@ -6,34 +6,48 @@ import {
 } from '../utils/ventas.js'
 import { get_producto_byId } from '../utils/productos.js'
 import { get_usuario_byId } from '../utils/usuarios.js'
+import { verificarToken } from '../middlewares/verificarToken.js'
 
 const router = Router()
 
 // Obtener todas las ventas
-router.get('/', (req, res) => {
-    const ventas = get_ventas()
-    res.status(200).json(ventas)
+router.get('/', async (req, res) => {
+    try {
+        const ventas = await get_ventas()
+        res.status(200).json(ventas)
+    } catch (error) {
+        console.error('Error al obtener las ventas:', error)
+        res.status(500).json({
+            mensaje: 'Error al obtener las ventas'
+        })
+    }
 })
 
 // Obtener una venta por su ID
-router.get('/:id', (req, res) => {
-    const id = Number(req.params.id)
-    const venta = get_venta_byId(id)
+router.get('/:id', async (req, res) => {
+    try {
+        const id = Number(req.params.id)
+        const venta = await get_venta_byId(id)
 
-    if (!venta) {
-        return res.status(404).json({
-            mensaje: 'Venta no encontrada'
+        if (!venta) {
+            return res.status(404).json({
+                mensaje: 'Venta no encontrada'
+            })
+        }
+
+        res.status(200).json(venta)
+    } catch (error) {
+        console.error('Error al obtener la venta:', error)
+        res.status(500).json({
+            mensaje: 'Error al obtener la venta'
         })
     }
-
-    res.status(200).json(venta)
 })
 
 // Registrar una nueva venta
-router.post('/', async (req, res) => {
+router.post('/', verificarToken, async (req, res) => {
     try {
         const {
-            id_usuario,
             telefono,
             direccion,
             delivery,
@@ -42,9 +56,10 @@ router.post('/', async (req, res) => {
             productos
         } = req.body
 
+        const id_usuario = req.usuario.id
+
         // Verificar los datos obligatorios
         if (
-            !Number.isInteger(Number(id_usuario)) ||
             !telefono?.trim() ||
             typeof delivery !== 'boolean' ||
             !['Efectivo', 'Transferencia'].includes(formaPago) ||
@@ -64,7 +79,7 @@ router.post('/', async (req, res) => {
         }
 
         // Verificar que el usuario exista y esté activo
-        const usuario = get_usuario_byId(Number(id_usuario))
+        const usuario = await get_usuario_byId(id_usuario)
 
         if (!usuario || !usuario.activo) {
             return res.status(404).json({
@@ -135,7 +150,7 @@ router.post('/', async (req, res) => {
 
         // Guardar la venta vinculada al usuario
         const venta = await agregar_venta({
-            id_usuario: Number(id_usuario),
+            id_usuario,
             fecha: new Date().toISOString().slice(0, 10),
             telefono: telefono.trim(),
             direccion: delivery ? direccion.trim() : '',

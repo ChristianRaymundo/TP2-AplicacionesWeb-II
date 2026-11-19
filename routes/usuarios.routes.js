@@ -1,4 +1,6 @@
 import { Router } from 'express'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 import {
     get_usuarios,
     get_usuario_byId,
@@ -9,10 +11,17 @@ import {
 
 const router = Router()
 
-router.get('/', (req, res) => {
-    const usuarios = get_usuarios()
+// Obtener todos los usuarios (sin contraseña)
+router.get('/', async (req, res) => {
+    try {
+        const usuarios = await get_usuarios()
 
-    res.status(200).json(usuarios)
+        res.status(200).json(usuarios)
+    } catch (error) {
+        res.status(500).json({
+            mensaje: 'Error al obtener los usuarios'
+        })
+    }
 })
 
 // Registrar un usuario
@@ -39,12 +48,10 @@ router.post('/', async (req, res) => {
             })
         }
 
-        // No enviamos la contraseña al cliente
-        const { contraseña: password, ...usuarioSinPassword } = nuevoUsuario
-
+        // crear_usuario ya devuelve el usuario sin la contraseña
         res.status(201).json({
             mensaje: 'Usuario registrado correctamente',
-            usuario: usuarioSinPassword
+            usuario: nuevoUsuario
         })
     } catch (error) {
         res.status(500).json({
@@ -54,21 +61,45 @@ router.post('/', async (req, res) => {
 })
 
 // Iniciar sesión
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         const email = req.body.email
         const contraseña = req.body.contraseña
 
-        const usuario = get_usuario_byEmail(email)
+        if (!email || !contraseña) {
+            return res.status(400).json({
+                mensaje: 'Debe completar email y contraseña'
+            })
+        }
 
-        if (!usuario || usuario.contraseña !== contraseña || !usuario.activo) {
+        const usuario = await get_usuario_byEmail(email)
+
+        // Compara lo que escribió con el hash guardado
+        const coincide = usuario
+            ? await bcrypt.compare(contraseña, usuario.contraseña)
+            : false
+
+        if (!coincide || !usuario.activo) {
             return res.status(401).json({
                 mensaje: 'Email o contraseña incorrectos, o usuario inactivo'
             })
         }
 
+        // Generar el token JWT
+        const token = jwt.sign(
+            {
+                id: usuario.id,
+                email: usuario.email
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: '2h'
+            }
+        )
+
         res.status(200).json({
             mensaje: `Bienvenido ${usuario.nombre}`,
+            token,
             usuario: {
                 id: usuario.id,
                 nombre: usuario.nombre,
@@ -77,34 +108,42 @@ router.post('/login', (req, res) => {
             }
         })
     } catch (error) {
+        console.error('Error al procesar el login:', error)
+
         res.status(500).json({
             mensaje: 'Error al procesar el login'
         })
     }
 })
 
-router.get('/:id', (req, res) => {
-    const id = Number(req.params.id)
+// Obtener un usuario por su ID
+router.get('/:id', async (req, res) => {
+    try {
+        const id = Number(req.params.id)
 
-    const usuario = get_usuario_byId(id)
+        const usuario = await get_usuario_byId(id)
 
-    if (!usuario) {
-        return res.status(404).json({
-            mensaje: 'Usuario no encontrado'
+        if (!usuario) {
+            return res.status(404).json({
+                mensaje: 'Usuario no encontrado'
+            })
+        }
+
+        // get_usuario_byId ya devuelve el usuario sin la contraseña
+        res.status(200).json(usuario)
+    } catch (error) {
+        res.status(500).json({
+            mensaje: 'Error al obtener el usuario'
         })
     }
-
-    // No mostrar la contraseña
-    const { contraseña, ...usuarioSinPassword } = usuario
-
-    res.status(200).json(usuarioSinPassword)
 })
 
+// Desactivar un usuario
 router.delete('/:id', async (req, res) => {
     try {
         const id = Number(req.params.id)
 
-        const usuario = get_usuario_byId(id)
+        const usuario = await get_usuario_byId(id)
 
         if (!usuario) {
             return res.status(404).json({

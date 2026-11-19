@@ -3,8 +3,11 @@
     "id": 1,
     "id_usuario": 1,
     "fecha": "2026-08-15",
+    "telefono": "351555686",
     "direccion": "Av. Sabattini 1234",
     "delivery": true,
+    "formaPago": "Efectivo",
+    "observaciones": "",
     "productos": [
       {
         "id_producto": 1,
@@ -23,8 +26,11 @@
     "id": 2,
     "id_usuario": 2,
     "fecha": "2026-08-16",
+    "telefono": "3512793188",
     "direccion": "Calle San Martín 456",
     "delivery": true,
+    "formaPago": "Efectivo",
+    "observaciones": "",
     "productos": [
       {
         "id_producto": 5,
@@ -43,8 +49,11 @@
     "id": 3,
     "id_usuario": 3,
     "fecha": "2026-08-17",
+    "telefono": "3512793879",
     "direccion": "",
     "delivery": false,
+    "formaPago": "Efectivo",
+    "observaciones": "",
     "productos": [
       {
         "id_producto": 12,
@@ -63,8 +72,11 @@
     "id": 4,
     "id_usuario": 1,
     "fecha": "2026-08-18",
+    "telefono": "3512473199",
     "direccion": "Bv. Illia 321",
     "delivery": true,
+    "formaPago": "Efectivo",
+    "observaciones": "",
     "productos": [
       {
         "id_producto": 2,

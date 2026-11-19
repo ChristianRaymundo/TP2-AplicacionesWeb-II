@@ -2,6 +2,7 @@ import { Router } from 'express'
 import {
     get_productos,
     get_producto_byId,
+    agregar_producto,
     actualizar_producto,
     eliminar_producto
 } from '../utils/productos.js'
@@ -17,6 +18,18 @@ router.get('/', async (req, res) => {
         res.status(500).json({ mensaje: 'Error al obtener los productos.' })
     }
 })
+
+// Crear un producto
+router.post('/', async (req, res) => {
+    try {
+        const producto = await agregar_producto(req.body)
+
+        res.status(201).json(producto)
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al crear el producto.' })
+    }
+})
+
 
 // Obtener un producto por ID
 router.get('/:id', async (req, res) => {

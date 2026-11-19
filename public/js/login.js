@@ -79,6 +79,9 @@ function checkLogin() {
 
             // Guardar los datos básicos del usuario
             sessionStorage.setItem("usuario", JSON.stringify(data.usuario))
+            
+            // Guardar el token JWT
+            sessionStorage.setItem("token", data.token)
 
             // Recuperar el producto que intentó agregar antes de iniciar sesión
             const productoPendiente = sessionStorage.getItem("productoPendiente")

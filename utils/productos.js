@@ -1,69 +1,40 @@
-import { readFile, writeFile } from 'fs/promises'
-
-const rutaProductos = './data/productos.json'
-
-// Leer los productos actualizados desde el archivo
-const leerProductos = async () => {
-    const archivo = await readFile(rutaProductos, 'utf-8')
-    return JSON.parse(archivo)
-}
+import { Producto } from '../db/schemas/product.schema.js'
 
 // Obtener todos los productos o filtrar por categoría
 export const get_productos = async (categoria) => {
-    const productosData = await leerProductos()
-
     if (categoria) {
-        return productosData.filter(
-            p => p.categoria.toLowerCase() === categoria.toLowerCase()
-        )
+        return await Producto.find({
+            categoria: { $regex: new RegExp(`^${categoria}$`, 'i') }
+        })
     }
 
-    return productosData
+    return await Producto.find()
 }
 
 // Obtener un producto por su ID
 export const get_producto_byId = async (id) => {
-    const productosData = await leerProductos()
-    return productosData.find(p => p.id === id)
+    return await Producto.findOne({ id: id })
 }
 
 // Actualizar un producto
 export const actualizar_producto = async (id, cambios) => {
-    const productosData = await leerProductos()
-    const index = productosData.findIndex(p => p.id === id)
-
-    if (index === -1) {
-        return null
-    }
-
-    productosData[index] = {
-        ...productosData[index],
-        ...cambios
-    }
-
-    await writeFile(
-        rutaProductos,
-        JSON.stringify(productosData, null, 2)
+    return await Producto.findOneAndUpdate(
+        { id: id },
+        cambios,
+        { new: true, runValidators: true }
     )
-
-    return productosData[index]
 }
 
 // Eliminar un producto
 export const eliminar_producto = async (id) => {
-    const productosData = await leerProductos()
-    const index = productosData.findIndex(p => p.id === id)
+    const producto = await Producto.findOneAndDelete({ id: id })
 
-    if (index === -1) {
-        return false
-    }
+    return producto !== null
+}
 
-    productosData.splice(index, 1)
+// Crear un producto
+export const agregar_producto = async (datos) => {
+    const nuevoProducto = new Producto(datos)
 
-    await writeFile(
-        rutaProductos,
-        JSON.stringify(productosData, null, 2)
-    )
-
-    return true
+    return await nuevoProducto.save()
 }

@@ -4,8 +4,9 @@ import cors from 'cors'
 import usuariosRouter from './routes/usuarios.routes.js'
 import productosRouter from './routes/productos.routes.js'
 import ventasRouter from './routes/ventas.routes.js'
+import { conectarDB } from './db/connection.js'
 
-dotenv.config()
+dotenv.config() // cargo las variables de entorno del archivo .env
 
 const app = express()
 
@@ -24,6 +25,13 @@ app.use('/usuarios', usuariosRouter)
 app.use('/productos', productosRouter)
 app.use('/ventas', ventasRouter)
 
-app.listen(port, () => {
-    console.log(`Servidor levantado en puerto ${port}`)
-})
+// conecta a MongoDB y luego inicia el servidor
+const iniciarServidor = async () => {
+    await conectarDB()
+
+    app.listen(port, () => {
+        console.log(`Servidor levantado en puerto ${port}`)
+    })
+}
+
+iniciarServidor()

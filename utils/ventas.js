@@ -1,44 +1,37 @@
-import { readFile, writeFile } from 'fs/promises'
+import { Venta } from '../db/schemas/ventas.schema.js'
 
-// Leer las ventas guardadas en el archivo JSON
-const fileVentas = await readFile('./data/ventas.json', 'utf-8')
-let ventasData = JSON.parse(fileVentas)
+// Obtener todas las ventas con sus usuarios y productos
+export const get_ventas = async () => {
+    return await Venta.find()
+        .populate('usuario', 'id nombre apellido email')
+        .populate('productos.producto', 'id titulo categoria precio')
+}
 
 // Buscar una venta por su ID
-export const get_venta_byId = (id) => {
-    return ventasData.find(v => v.id === id)
+export const get_venta_byId = async (id) => {
+    return await Venta.findOne({ id: id })
+        .populate('usuario', 'id nombre apellido email')
+        .populate('productos.producto', 'id titulo categoria precio')
 }
 
 // Obtener las ventas de un usuario
-export const get_ventas_byUsuario = (id_usuario) => {
-    return ventasData.filter(v => v.id_usuario === id_usuario)
+export const get_ventas_byUsuario = async (id_usuario) => {
+    return await Venta.find({ id_usuario: id_usuario })
+        .populate('usuario', 'id nombre apellido email')
+        .populate('productos.producto', 'id titulo categoria precio')
 }
 
-// Obtener todas las ventas
-export const get_ventas = () => {
-    return ventasData
-}
-
-// Agregar una nueva venta
+// Registrar una nueva venta
 export const agregar_venta = async (nuevaVenta) => {
-    // Generar un ID para la nueva venta
-    const nuevoId = ventasData.length > 0
-        ? Math.max(...ventasData.map(v => v.id)) + 1
-        : 1
+    // El ID lo genera el servidor: el mayor ID que existe + 1
+    const ultimaVenta = await Venta.findOne().sort({ id: -1 })
+    const nuevoId = ultimaVenta ? ultimaVenta.id + 1 : 1
 
-    // Agregar el ID a los datos de la venta
-    const ventaConId = {
+    // Crear y guardar la venta
+    const venta = new Venta({
         id: nuevoId,
         ...nuevaVenta
-    }
+    })
 
-    // Guardar la venta y actualizar el archivo JSON
-    ventasData.push(ventaConId)
-
-    await writeFile(
-        './data/ventas.json',
-        JSON.stringify(ventasData, null, 2)
-    )
-
-    return ventaConId
+    return await venta.save()
 }

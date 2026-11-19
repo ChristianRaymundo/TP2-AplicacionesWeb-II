@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", generarNavbar)
 // Cerrar sesión y volver al inicio
 function logoutUser() {
     sessionStorage.removeItem("usuario");
-
+    sessionStorage.removeItem("token");
+    
     const dentroDePages = window.location.pathname.includes("/pages/");
     const basePath = dentroDePages ? "../" : "";
 

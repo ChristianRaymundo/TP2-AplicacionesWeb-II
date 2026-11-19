@@ -12,6 +12,8 @@ document.getElementById("form-pago").addEventListener("submit", async function (
     // obtener usuario de la sesión
     const usuario = JSON.parse(sessionStorage.getItem("usuario"));
 
+    const token = sessionStorage.getItem("token"); // token de la sesión
+
     if (!usuario || !usuario.id) {
         alert("Debés iniciar sesión para realizar una compra.");
         window.location.href = "../login.html";
@@ -111,7 +113,6 @@ document.getElementById("form-pago").addEventListener("submit", async function (
 
         // preparar datos de la venta para el backend
         const nuevaVenta = {
-            id_usuario: Number(usuario.id),
             telefono,
             direccion: delivery ? direccion : "",
             delivery,
@@ -124,7 +125,8 @@ document.getElementById("form-pago").addEventListener("submit", async function (
         const responseVenta = await fetch("/ventas", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(nuevaVenta)
         });

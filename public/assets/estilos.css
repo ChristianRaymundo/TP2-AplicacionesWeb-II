@@ -231,6 +231,45 @@ body {
     background-color: #d9820f;
 }
 
+/* Enlace para iniciar sesión */
+.registro-login {
+    margin-top: 18px;
+    font-size: 0.95em;
+}
+
+.registro-login a {
+    color: #d9820f;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.registro-login a:hover {
+    color: #b34700;
+    text-decoration: underline;
+}
+
+/* Botón para volver al inicio */
+.btn-volver {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 20px;
+    border: 1px solid #f39c12;
+    border-radius: 25px;
+    color: #b34700;
+    background-color: #fff9e6;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #f39c12;
+    color: white;
+    transform: translateY(-2px);
+}
+
 /* ==========================
          BOTON VER MAS
 ========================== */

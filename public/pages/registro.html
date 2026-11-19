@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../assets/estilos.css">
 </head>
+
 <body>
+
     <main class="registro-main">
         <div class="registro-card">
+
             <h2>Registro de Usuario</h2>
+
             <form>
+
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" required>
 
@@ -25,12 +31,90 @@
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" required>
 
-                <button type="button" onclick="registrarUsuario()">Registrarse</button>
+                <button type="button" onclick="registrarUsuario()">
+                    Registrarse
+                </button>
+
             </form>
-            <p>¿Ya tenés cuenta? <a href="../login.html">Iniciá sesión</a></p>
+
+            <p class="registro-login">
+                ¿Ya tenés cuenta?
+                <a href="../login.html">Iniciá sesión</a>
+            </p>
+
+            <a href="../index.html" class="btn-volver">
+                ← Volver al inicio
+            </a>
+
         </div>
     </main>
 
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+
+            <!-- Contacto -->
+            <div class="footer-section contacto">
+                <h3>Contacto</h3>
+
+                <p>
+                    <a href="mailto:larotiseria@email.com">
+                        <img src="../assets/imagenes/icono-correo.png"
+                            alt="Correo" class="icono-footer">
+                        larotiseria@email.com
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://wa.me/3518112819" target="_blank">
+                        <img src="../assets/imagenes/icono-wsp.png"
+                            alt="WhatsApp" class="icono-footer">
+                        WhatsApp: 3518112819
+                    </a>
+                </p>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-section redes">
+                <h3>Redes Sociales</h3>
+
+                <p>
+                    <a href="https://www.instagram.com/roti.lacolonia?igsh=bTMxNW1xaW00Yzlr"
+                        target="_blank">
+                        <img src="../assets/imagenes/icono-instagram.png"
+                            alt="Instagram" class="icono-footer">
+                        Instagram
+                    </a>
+                </p>
+            </div>
+
+            <!-- Ubicación y horarios -->
+            <div class="footer-section ubicacion">
+                <h3>Ubicación & Horarios</h3>
+
+                <p>
+                    <img src="../assets/imagenes/icono-ubicacion.png"
+                        alt="Ubicación" class="icono-footer">
+                    Tulumba 1332, Barrio Miralta
+                </p>
+
+                <p>
+                    Horario de atención: jueves a domingos, 19:00 - 00:00 hs
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Rotisería La Colonia | Hacemos tu noche más deliciosa 😋</p>
+        </div>
+
+    </footer>
+
+    <!-- Script de registro -->
     <script src="../js/login.js"></script>
+
 </body>
+
 </html>

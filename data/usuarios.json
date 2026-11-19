@@ -4,7 +4,7 @@
     "nombre": "Juan",
     "apellido": "Pérez",
     "email": "juan.perez@email.com",
-    "contraseña": "123456",
+    "contraseña": "$2b$10$IasUExISw9Cqaxs2oEBpmekYptNruo4tx5CH3OveQyBQxgHkjrQ5C",
     "activo": true
   },
   {
@@ -12,7 +12,7 @@
     "nombre": "María",
     "apellido": "Gómez",
     "email": "maria.gomez@email.com",
-    "contraseña": "maria123",
+    "contraseña": "$2b$10$5RIzf2hX8ObGjeDIUBXjwO8kKxrMDzcDHm8b1NHTz6CCVtfTYeYR2",
     "activo": false
   },
   {
@@ -20,7 +20,7 @@
     "nombre": "Lucas",
     "apellido": "Rodríguez",
     "email": "lucas.rodriguez@email.com",
-    "contraseña": "lucas456",
+    "contraseña": "$2b$10$2QDlzrOfZkl0X5B6gjTOUuDZHFby8ddQdm34evTLx7yl1iRQBycF6",
     "activo": true
   },
   {
@@ -28,7 +28,7 @@
     "nombre": "Sofía",
     "apellido": "Martínez",
     "email": "sofia.martinez@email.com",
-    "contraseña": "sofia789",
+    "contraseña": "$2b$10$F7c2D/GPBap.9bzDG8w2keb340DlTwLiCMS5pjJQ2D.BSb/C85IQ6",
     "activo": false
   },
   {
@@ -36,7 +36,7 @@
     "nombre": "Carlos",
     "apellido": "Prueba",
     "email": "carlos.prueba2026@email.com",
-    "contraseña": "Prueba123",
+    "contraseña": "$2b$10$LBKxLzxQyv4Q1VnNl/JTYuhnmn9AMtwo3IyX4b2UZZarJblBxXmka",
     "activo": true
   },
   {
@@ -44,7 +44,7 @@
     "nombre": "Christian",
     "apellido": "Raymundo",
     "email": "Im.crisz@hotmail.com",
-    "contraseña": "123456",
+    "contraseña": "$2b$10$uonkIs9GkIB9JMRaJ2pHJ.4tz1WGGg0guVUkZOjZ7KAypyRps2QaW",
     "activo": true
   }
 ]
